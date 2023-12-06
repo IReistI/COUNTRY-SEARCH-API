@@ -23,6 +23,7 @@ body {
 }
 img {
     max-width: 100%;
+    display: block;
 }
 h1, p, li, ul, fieldset {
     margin: 0;

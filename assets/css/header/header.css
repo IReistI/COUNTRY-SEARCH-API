@@ -6,23 +6,83 @@
     background-color: var(--colorWhite);
     box-shadow: 0px -17px 10px 12px var(--ligthModeInput-darkGray);
 }
+@media (min-width: 768px) {
+    .header {
+        padding: 4rem 4rem;
+    }
+}
+@media (min-width: 1440px) {
+    .header {
+        padding: 4rem 6rem;
+    }
+}
 
 .title {
     display: flex;
     gap: .5rem;
+    align-items: center;
+}
+@media (min-width: 1440px) {
+    .title {
+        gap: 1rem;
+    }
 }
 .title__h1 {
     font-size: 1.7rem;
+}
+@media (min-width: 768px) {
+    .title__h1 {
+        font-size: 2rem;
+    }
+    .title__icon img{
+        width: 2rem;
+    }
+}
+@media (min-width: 1440px) {
+    .title__h1 {
+        font-size: 2.5rem;
+    }
+    .title__icon img {
+        width: 3rem;
+    }
 }
 
 .darkMode {
     display: flex;
     gap: .5rem;
 }
+@media (min-width: 1440px) {
+    .darkMode {
+        gap: 1rem;
+    }
+}
+.darkMode__icon, .darkMode__title:hover {
+    cursor: pointer;
+}
 .darkMode__icon{
     width: auto;
+}
+@media (min-width: 768px) {
+    .darkMode__icon {
+        width: 2rem;
+    }
+}
+@media (min-width: 1440px) {
+    .darkMode__icon {
+        width: 3rem;
+    }
 }
 .darkMode__title {
     all: unset;
     font-weight: 600;
+}
+@media (min-width: 768px) {
+    .darkMode__title {
+        font-size: 1.7rem;
+    }
+}
+@media (min-width: 1440px) {
+    .darkMode__title {
+        font-size: 2rem;
+    }
 }
