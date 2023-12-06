@@ -1,0 +1,31 @@
+.cards {
+    padding: 0rem 6rem 4rem 6rem;
+    display: grid;
+    gap: 5rem;
+}
+
+.card {
+    background-color: var(--colorWhite);
+    box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card__flag {
+    width: 100%;
+}
+.card__info {
+    padding: 4rem 3rem;
+}
+.card__title {
+    margin: 0 0 2rem 0;
+}
+.card__text {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.card__text:last-of-type {
+    margin-bottom: 0;
+}
+.card__result {
+    font-weight: 300;
+}

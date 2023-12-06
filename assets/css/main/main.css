@@ -1,0 +1,37 @@
+main {
+    padding: 4rem 2rem;
+}
+fieldset {
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.input {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--colorWhite);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
+}
+.input__icon {
+    flex-basis: 2rem;
+}
+.input__search {
+    all: unset;
+    flex-basis: 98%;
+    font-weight: 600;
+}
+
+.select__countrys {
+    padding: 2rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--colorWhite);
+    box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
+}

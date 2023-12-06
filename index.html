@@ -3,10 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this is my fourth project from F.E.M, i use HTML, CSS, JS and API">
     <title>COUNTRY SEARCH API</title>
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/globals.css">
+    <link rel="stylesheet" href="assets/css/header/header.css">
+    <link rel="stylesheet" href="assets/css/main/main.css">
+    <link rel="stylesheet" href="assets/css/cardFlag/cardFlag.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="title">
+            <h1 class="title__h1">Where in the World?</h1>
+            <a class="title__icon" href="index.html"><img src="assets/icons/icon-world.svg" alt="icon world"></a>
+        </div>
+        <div class="darkMode">
+            <img class="darkMode__icon" src="assets/icons/icon-moon-white.svg" alt="icon moon-white">
+            <button class="darkMode__title">Dark Mode</button>
+        </div>
+    </header>
+    <main>
+        <form>
+            <fieldset class="input">
+                <img class="input__icon" src="assets/icons/icon-search-white.svg" alt="icon search">
+                <input class="input__search" type="text" placeholder="Search for a country...">
+            </fieldset>
+            <fieldset class="select">
+                <select class="select__countrys" name="" id="country">
+                    <option selected value="0">Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="America">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </fieldset>
+        </form>
+    </main>
+    <section class="cards">
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/de.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Germany</h2>
+                <p class="card__text">Population: <span class="card__result">81,770,900</span></p>
+                <p class="card__text">Region: <span class="card__result">Europe</span></p>
+                <p class="card__text">Capital: <span class="card__result">Berlin</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/us.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">United States of America</h2>
+                <p class="card__text">Population: <span class="card__result">323,947,000</span></p>
+                <p class="card__text">Region: <span class="card__result">Americas</span></p>
+                <p class="card__text">Capital: <span class="card__result">Washington, D.C</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/br.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Brazil</h2>
+                <p class="card__text">Population: <span class="card__result">206,135,893</span></p>
+                <p class="card__text">Region: <span class="card__result">Americas</span></p>
+                <p class="card__text">Capital: <span class="card__result">Brasilia</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/is.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Iceland</h2>
+                <p class="card__text">Population: <span class="card__result">334,300</span></p>
+                <p class="card__text">Region: <span class="card__result">Europe</span></p>
+                <p class="card__text">Capital: <span class="card__result">Reykjavík</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Afghanistan</h2>
+                <p class="card__text">Population: <span class="card__result">27,657,145</span></p>
+                <p class="card__text">Region: <span class="card__result">Asia</span></p>
+                <p class="card__text">Capital: <span class="card__result">Kabul</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/ax.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Åland Islands</h2>
+                <p class="card__text">Population: <span class="card__result">28,875</span></p>
+                <p class="card__text">Region: <span class="card__result">Europe</span></p>
+                <p class="card__text">Capital: <span class="card__result">Mariehamn</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/al.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Albania</h2>
+                <p class="card__text">Population: <span class="card__result">2,886,026</span></p>
+                <p class="card__text">Region: <span class="card__result">Europe</span></p>
+                <p class="card__text">Capital: <span class="card__result">Tirana</span></p>
+            </div>
+        </article><!--.card-flag-->
+        <article class="card">
+            <img class="card__flag" src="https://flagcdn.com/dz.svg" alt="flag">
+            <div class="card__info">
+                <h2 class="card__title">Algeria</h2>
+                <p class="card__text">Population: <span class="card__result">40,400,000</span></p>
+                <p class="card__text">Region: <span class="card__result">Africa</span></p>
+                <p class="card__text">Capital: <span class="card__result">Algiers</span></p>
+            </div>
+        </article><!--.card-flag-->
+    </section> <!--.cards-->
 </body>
 </html>

@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: var(--colorWhite);
+    box-shadow: 0px -17px 10px 12px var(--ligthModeInput-darkGray);
+}
+
+.title {
+    display: flex;
+    gap: .5rem;
+}
+.title__h1 {
+    font-size: 1.7rem;
+}
+
+.darkMode {
+    display: flex;
+    gap: .5rem;
+}
+.darkMode__icon{
+    width: auto;
+}
+.darkMode__title {
+    all: unset;
+    font-weight: 600;
+}
