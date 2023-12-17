@@ -25,7 +25,7 @@ img {
     max-width: 100%;
     display: block;
 }
-h1, p, li, ul, fieldset {
+h1, h2, p, li, ul, fieldset {
     margin: 0;
     padding: 0;
 }

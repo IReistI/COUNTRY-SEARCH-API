@@ -1,0 +1,104 @@
+.container {
+    padding: 3rem;
+}
+@media (min-width: 768px) {
+    .container {
+        padding-inline: 6rem;
+    }
+}
+.button-back {
+    width: 10rem;
+    display: flex;
+    gap: .5rem;
+    background-color: var(--colorWhite);
+    color: var(--lightModeText-veryDarkBlue);
+    padding: 1rem 2rem;
+    margin-bottom: 5rem;
+    box-shadow: 0px 0px 9px -2px var(--ligthModeInput-darkGray);
+    transition: background-color 300ms ease-in-out;
+}
+.button-back:hover {
+    background-color: var(--ligthModeInput-darkGray);
+}
+
+.country, .country > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+@media (min-width: 1440px) {
+    .country {
+        flex-direction: row;
+        gap: 15rem;
+        align-items: center;
+    }
+}
+@media (min-width: 1440px) {
+    .country__flag {
+        max-width: 70rem;
+    }
+}
+@media (min-width: 1440px) {
+    .country > div {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 1440px) {
+    .country__title {
+        width: 100%;
+    }
+}
+.country___text, .country__borders-title {
+    font-weight: 600;
+}
+.country___text {
+    margin-bottom: 1.5rem;
+}
+.country___text:last-child {
+    margin-bottom: 0;
+}
+.country___text--margin {
+    margin-top: 1.5rem;
+}
+@media (min-width: 1440px) {
+    .country___text--margin {
+        margin-top: 0;
+    }
+}
+.country__result {
+    font-weight: 300;
+}
+@media (min-width: 1440px) {
+    .country article:nth-last-of-type(1) {
+        width: 100%;
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.country__borders {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+@media (min-width: 1440px) {
+    .country__borders {
+        margin-top: 0;
+    }
+}
+.country__border {
+    flex-grow: 1;
+    background-color: var(--colorWhite);
+    padding: 1rem;
+    color: var(--lightModeText-veryDarkBlue);
+    box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
+    transition: background-color 300ms ease-in-out;
+}
+.country__border:hover {
+    background-color: var(--ligthModeInput-darkGray);
+}
