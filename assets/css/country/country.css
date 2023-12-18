@@ -102,3 +102,10 @@
 .country__border:hover {
     background-color: var(--ligthModeInput-darkGray);
 }
+.country__border--not {
+    transition: unset;
+}
+.country__border--not:hover {
+    cursor: text;
+    background-color: var(--colorWhite);
+}
