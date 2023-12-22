@@ -1,10 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
     callApi();
+
+    const formSelect = document.querySelector("#country");
+    formSelect.addEventListener('change', e => {
+        callApiRegions(e.target.value);
+    })
 });
 
 async function callApi() {
     try {
         const response = await fetch("https://restcountries.com/v3.1/all");
+        const result = await response.json();
+        sessionStorage.setItem('result', JSON.stringify(result));
+        createCountrys(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
+async function callApiRegions(region) {
+    if(region === "0") {
+        const storage = sessionStorage.getItem('result');
+        const data = JSON.parse(storage);
+        createCountrys(data);
+        return;
+    }
+    try {
+        const response = await fetch(`https://restcountries.com/v3.1/region/${region}`);
         const result = await response.json();
         createCountrys(result);
     } catch (error) {
@@ -13,6 +34,7 @@ async function callApi() {
 };
 
 function createCountrys(result) {
+    cleanHTML();
     const section = document.querySelector("#cards");
     result.forEach( ({flags: {svg, alt} ,name: {common}, population, region, capital, cca3 : id}) => {
         const article = document.createElement("ARTICLE");
@@ -29,4 +51,10 @@ function createCountrys(result) {
         article.innerHTML = content;
         section.appendChild(article);
     });
+};
+function cleanHTML() {
+    const section = document.querySelector("#cards");
+    while(section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
 };
