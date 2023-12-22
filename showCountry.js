@@ -40,8 +40,7 @@ function showResult(result) {
                     </div>
                 </article>
             </div>
-        `
-        console.log(content);
+        `;
         countrySection.innerHTML = content;
     });
 };
