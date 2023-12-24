@@ -29,9 +29,10 @@ fieldset {
 
 .input {
     display: flex;
-    gap: 2rem;
+    max-width: 65rem;
+    flex-wrap: wrap;
     background-color: var(--colorWhite);
-    padding: 2rem;
+    
     border-radius: 10px;
     box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
 }
@@ -40,8 +41,14 @@ fieldset {
         width: 50rem;
     }
 }
+.input__flex {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    padding: 2rem;
+}
 .input__icon {
-    flex-basis: 2rem;
+    width: 2rem;
 }
 .input__icon:hover {
     cursor: pointer;
@@ -49,13 +56,49 @@ fieldset {
 }
 .input__search {
     all: unset;
-    flex-basis: 98%;
     font-weight: 600;
 }
 @media (min-width: 768px) {
     .input__search {
         font-size: 1.7rem;
     }
+}
+.input__result {
+    width: 100%;
+    padding-block: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+    border-top: 1px solid var(--ligthModeInput-darkGray);
+    overflow: scroll;
+    max-height: 15rem;
+}
+.input__result--alert {
+    padding-block: 0;
+}
+.input__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+}
+.input__link:hover {
+    cursor: pointer;
+    background-color: var(--darkModeBg-veryDarkBlue);
+    color: var(--colorWhite);
+    transition: background 300ms ease-in;
+}
+.input__link img {
+    width: 3rem;
+}
+.input__alert {
+    flex-basis: 100%;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--colorWhite);
+    background-color: red;
+    opacity: .7;
 }
 
 .select__countrys {
