@@ -1,4 +1,4 @@
-import {divCards} from "../js/const.js";
+import {divCards, body} from "../js/const.js";
 export function createCountrys(result) {
     cleanHTML();
     result.forEach( ({flags: {svg, alt} ,name: {common}, population, region, capital, cca3 : id}) => {
@@ -27,6 +27,22 @@ export function search(result) {
         const value = result.map( value => value.cca3 );
         return window.location.href = `country.html?id=${value[0]}`;
     }
+};
+export function darkMode() {
+    if(body.classList.contains('darkModeBtn')) {
+        body.classList.remove('darkModeBtn');
+        localStorage.setItem('darkMode', 'disabled');
+    } else {
+        body.classList.add('darkModeBtn');
+        localStorage.setItem('darkMode', 'activated');
+    }
+};
+export function verifyDarkMode() {
+    const darkMode = localStorage.getItem('darkMode');
+    if(darkMode === 'activated') {
+        body.classList.add('darkModeBtn');
+        return;
+    };
 };
 export const showLoading = spinner => spinner.classList.add('hidden');
 export const hideLoading = spinner => spinner.classList.remove('hidden');

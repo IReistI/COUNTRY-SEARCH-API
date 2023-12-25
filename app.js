@@ -1,6 +1,7 @@
-import { createCountrys, cleanHTML, search, showLoading, hideLoading } from "./assets/js/functions.js";
-import { divCards, ulResults, searchInput, form } from "./assets/js/const.js";
+import { createCountrys, cleanHTML, search, showLoading, hideLoading, darkMode, verifyDarkMode } from "./assets/js/functions.js";
+import { divCards, ulResults, searchInput, form, darkModeBtn } from "./assets/js/const.js";
 document.addEventListener("DOMContentLoaded", () => {
+    verifyDarkMode();
     const spinner = document.querySelector(".loader");  
     showLoading(spinner);
     callApi();
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formSelect.addEventListener('change', e => {
         callApiRegions(e.target.value);
     });
+    darkModeBtn.addEventListener('click', darkMode);
 });
 async function callApi() {
     const spinner = document.querySelector(".loader");

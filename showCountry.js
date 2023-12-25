@@ -1,3 +1,9 @@
+import { darkModeBtn } from "./assets/js/const.js";
+import { darkMode, verifyDarkMode } from "./assets/js/functions.js";
+document.addEventListener('DOMContentLoaded', () => {
+    verifyDarkMode();
+    darkModeBtn.addEventListener('click', darkMode);
+});
 async function showCountry() {
     const url = new URL(window.location);
     const id = (url.searchParams.get("id"));
