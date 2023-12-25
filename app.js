@@ -1,7 +1,5 @@
-const divCards = document.querySelector("#cards");
-const ulResults = document.querySelector("#input__result");
-const searchInput = document.querySelector(".input__search");
-const form = document.querySelector(".form");
+import { createCountrys, cleanHTML, search, showLoading, hideLoading } from "./assets/js/functions.js";
+import { divCards, ulResults, searchInput, form } from "./assets/js/const.js";
 document.addEventListener("DOMContentLoaded", () => {
     const spinner = document.querySelector(".loader");  
     showLoading(spinner);
@@ -114,34 +112,5 @@ async function showResults() {
         ulResults.appendChild(listItem);
     });
 };
-function createCountrys(result) {
-    cleanHTML();
-    result.forEach( ({flags: {svg, alt} ,name: {common}, population, region, capital, cca3 : id}) => {
-        const article = document.createElement("ARTICLE");
-        article.classList.add('card');
-        const content = `
-            <a href="country.html?id=${id}"><img loading="lazy" class="card__flag" src="${svg}" alt="flag ${alt ? alt : common}"></a>
-            <div class="card__info">
-                <h2 class="card__title">${common}</h2>
-                <p class="card__text">Population: <span class="card__result">${population}</span></p>
-                <p class="card__text">Region: <span class="card__result">${region}</span></p>
-                <p class="card__text">Capital: <span class="card__result">${capital}</span></p>
-            </div>
-        `
-        article.innerHTML = content;
-        divCards.appendChild(article);
-    });
-};
-function cleanHTML() {
-    while(divCards.firstChild) {
-        divCards.removeChild(divCards.firstChild);
-    }
-};
-function search(result) {
-    if(result.length > 0) {
-        const value = result.map( value => value.cca3 );
-        return window.location.href = `country.html?id=${value[0]}`;
-    }
-};
-const showLoading = spinner => spinner.classList.add('hidden');
-const hideLoading = spinner => spinner.classList.remove('hidden');
+
+

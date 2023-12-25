@@ -70,7 +70,7 @@ fieldset {
     font-weight: 300;
     line-height: 1.7;
     border-top: 1px solid var(--ligthModeInput-darkGray);
-    overflow: scroll;
+    overflow-y: scroll;
     max-height: 15rem;
 }
 .input__result--alert {
