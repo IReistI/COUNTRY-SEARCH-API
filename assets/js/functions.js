@@ -1,4 +1,4 @@
-import {divCards, body} from "../js/const.js";
+import {divCards, body, iconMoon, iconSearch} from "../js/const.js";
 export function createCountrys(result) {
     cleanHTML();
     result.forEach( ({flags: {svg, alt} ,name: {common}, population, region, capital, cca3 : id}) => {
@@ -32,15 +32,23 @@ export function darkMode() {
     if(body.classList.contains('darkModeBtn')) {
         body.classList.remove('darkModeBtn');
         localStorage.setItem('darkMode', 'disabled');
+
+        iconMoon.src = 'assets/icons/icon-moon-white.svg';
+        iconSearch.src = 'assets/icons/icon-search-white.svg';
     } else {
         body.classList.add('darkModeBtn');
         localStorage.setItem('darkMode', 'activated');
+
+        iconMoon.src = 'assets/icons/icon-moon-dark.svg';
+        iconSearch.src = 'assets/icons/icon-search-gray.svg';
     }
 };
 export function verifyDarkMode() {
     const darkMode = localStorage.getItem('darkMode');
     if(darkMode === 'activated') {
         body.classList.add('darkModeBtn');
+        iconMoon.src = 'assets/icons/icon-moon-dark.svg';
+        iconSearch.src = 'assets/icons/icon-search-gray.svg';
         return;
     };
 };

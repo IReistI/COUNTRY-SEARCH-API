@@ -31,4 +31,10 @@
         color: var(--darkModeText-ligthModeElements-white);
         box-shadow: 0px 0px 6px -3px var(--darkModeBg-veryDarkBlue);
     }
+    .input__link {
+        color: var(--colorWhite);
+    }
+    .input__alert {
+        color: var(--lightModeText-veryDarkBlue);
+    }
 }
