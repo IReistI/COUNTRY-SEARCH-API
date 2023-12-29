@@ -5,7 +5,7 @@ export function createCountrys(result) {
         const article = document.createElement("ARTICLE");
         article.classList.add('card');
         const content = `
-            <a href="country.html?id=${id}"><img loading="lazy" class="card__flag" src="${svg}" alt="flag ${alt ? alt : common}"></a>
+            <a href="country.html?id=${id}"><img class="card__flag" src="${svg}" alt="flag ${alt ? alt : common}"></a>
             <div class="card__info">
                 <h2 class="card__title">${common}</h2>
                 <p class="card__text">Population: <span class="card__result">${population}</span></p>
