@@ -37,4 +37,7 @@
     .input__alert {
         color: var(--lightModeText-veryDarkBlue);
     }
+    footer {
+        color: var(--colorWhite);
+    }
 }

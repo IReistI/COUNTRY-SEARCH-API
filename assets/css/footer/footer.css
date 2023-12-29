@@ -1,0 +1,7 @@
+.footer {
+    color: var(--lightModeText-veryDarkBlue);
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 2rem 0;
+}
