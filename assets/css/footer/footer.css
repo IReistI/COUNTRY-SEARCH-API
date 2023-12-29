@@ -5,3 +5,7 @@
     font-weight: 600;
     padding: 2rem 0;
 }
+.footer a {
+    color: blueviolet;
+    text-decoration: underline;
+}
