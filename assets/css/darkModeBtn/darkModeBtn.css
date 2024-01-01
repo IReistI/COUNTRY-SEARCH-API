@@ -2,16 +2,7 @@
     background-color: var(--darkModeBg-veryDarkBlue);
     color: var(--darkModeText-ligthModeElements-white);
 
-    header {
-        background-color: var(--darkModeElements-darkBlue);
-        box-shadow: 0px -17px 10px 12px var(--darkModeBg-veryDarkBlue);
-    }
-    main .select__countrys,
-    main .input {
-        background-color: var(--darkModeElements-darkBlue);
-        color: var(--darkModeText-ligthModeElements-white);
-        box-shadow: 0px 0px 6px -3px var(--darkModeBg-veryDarkBlue);
-    }
+    
     .card {
         background-color: var(--darkModeElements-darkBlue);
         box-shadow: 0px 0px 6px -3px var(--darkModeBg-veryDarkBlue);
@@ -37,7 +28,18 @@
     .input__alert {
         color: var(--lightModeText-veryDarkBlue);
     }
-    footer {
-        color: var(--colorWhite);
-    }
+    
+}
+.darkModeBtn > header {
+    background-color: var(--darkModeElements-darkBlue);
+    box-shadow: 0px -17px 10px 12px var(--darkModeBg-veryDarkBlue);
+}
+.darkModeBtn > footer {
+    color: var(--colorWhite);
+}
+.darkModeBtn > main .select__countrys,
+.darkModeBtn > main .input {
+    background-color: var(--darkModeElements-darkBlue);
+    color: var(--darkModeText-ligthModeElements-white);
+    box-shadow: 0px 0px 6px -3px var(--darkModeBg-veryDarkBlue);
 }

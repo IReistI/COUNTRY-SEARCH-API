@@ -34,13 +34,19 @@ export function darkMode() {
         localStorage.setItem('darkMode', 'disabled');
 
         iconMoon.src = 'assets/icons/icon-moon-white.svg';
-        iconSearch.src = 'assets/icons/icon-search-white.svg';
+        if(iconSearch) {
+            iconSearch.src = 'assets/icons/icon-search-gray.svg';
+            return;
+        }
     } else {
         body.classList.add('darkModeBtn');
         localStorage.setItem('darkMode', 'activated');
 
         iconMoon.src = 'assets/icons/icon-moon-dark.svg';
-        iconSearch.src = 'assets/icons/icon-search-gray.svg';
+        if(iconSearch) {
+            iconSearch.src = 'assets/icons/icon-search-gray.svg';
+            return;
+        }
     }
 };
 export function verifyDarkMode() {
@@ -48,8 +54,10 @@ export function verifyDarkMode() {
     if(darkMode === 'activated') {
         body.classList.add('darkModeBtn');
         iconMoon.src = 'assets/icons/icon-moon-dark.svg';
-        iconSearch.src = 'assets/icons/icon-search-gray.svg';
-        return;
+        if(iconSearch) {
+            iconSearch.src = 'assets/icons/icon-search-gray.svg';
+            return;
+        }
     };
 };
 export const showLoading = spinner => spinner.classList.add('hidden');
