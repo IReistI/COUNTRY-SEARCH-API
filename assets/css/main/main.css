@@ -46,6 +46,7 @@ fieldset {
     gap: 1rem;
     flex: 1;
     padding: 2rem;
+    cursor: text;
 }
 .input__icon {
     width: 2rem;
@@ -107,7 +108,9 @@ fieldset {
     border-radius: 10px;
     background-color: var(--colorWhite);
     box-shadow: 0px 0px 6px -3px var(--ligthModeInput-darkGray);
+    cursor: pointer;
 }
+
 @media (min-width: 1440px) {
     .select__countrys {
         padding: 2rem 4rem;
