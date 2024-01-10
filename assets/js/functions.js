@@ -60,5 +60,14 @@ export function verifyDarkMode() {
         }
     };
 };
+export function debouncearFunction(callback, delay = 300) {
+    let timer;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+           callback(); 
+        }, delay);
+    }
+};
 export const showLoading = spinner => spinner.classList.add('hidden');
 export const hideLoading = spinner => spinner.classList.remove('hidden');

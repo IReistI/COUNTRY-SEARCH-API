@@ -1,4 +1,4 @@
-import { createCountrys, cleanHTML, search, showLoading, hideLoading, darkMode, verifyDarkMode } from "./assets/js/functions.js";
+import { createCountrys, cleanHTML, search, showLoading, hideLoading, darkMode, verifyDarkMode, debouncearFunction } from "./assets/js/functions.js";
 import { divCards, ulResults, searchInput, form, darkModeBtn } from "./assets/js/const.js";
 document.addEventListener("DOMContentLoaded", () => {
     verifyDarkMode();
@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showLoading(spinner);
     callApi();
 
-    searchInput.addEventListener('input', showResults);
+    searchInput.addEventListener('input', debounceRequest);
     form.addEventListener('submit', e => {
         e.preventDefault();
         const value = searchInput.value;
@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     darkModeBtn.addEventListener('click', darkMode);
 });
+let debounceRequest = debouncearFunction( () => {
+    showResults();
+}, 300);
 async function callApi() {
     const spinner = document.querySelector(".loader");
     hideLoading(spinner);
@@ -114,5 +117,4 @@ async function showResults() {
         ulResults.appendChild(listItem);
     });
 };
-
 
