@@ -1,0 +1,9 @@
+.pagination {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .pagination {
+        gap: unset;
+    }
+}

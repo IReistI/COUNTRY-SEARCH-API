@@ -1,10 +1,15 @@
 import { createCountrys, cleanHTML, search, showLoading, hideLoading, darkMode, verifyDarkMode, debouncearFunction } from "./assets/js/functions.js";
 import { divCards, ulResults, searchInput, form, darkModeBtn } from "./assets/js/const.js";
+let itemsPerPage = 20;
+let currentPage = 1;
+let totalPages;
+let iterator;
+
 document.addEventListener("DOMContentLoaded", () => {
     verifyDarkMode();
     const spinner = document.querySelector(".loader");  
     showLoading(spinner);
-    callApi();
+    fetchAndDisplay();
 
     searchInput.addEventListener('input', debounceRequest);
     form.addEventListener('submit', e => {
@@ -22,19 +27,73 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     darkModeBtn.addEventListener('click', darkMode);
 });
+async function fetchCountries() {
+    const spinner = document.querySelector(".loader");
+    if(spinner) {
+        hideLoading(spinner);
+    }
+    try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const result = await response.json();
+        sessionStorage.setItem('result', JSON.stringify(result));
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+function displayCountries(countries) {
+    cleanHTML();
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = currentPage * itemsPerPage;
+
+    const displayedCountries = countries.slice(start, end);
+    createCountrys(displayedCountries);
+};
+
+function displayPagination(totalPages) {
+    const pagination = document.getElementById('pagination');
+    while(pagination.firstChild) {
+        pagination.removeChild(pagination.firstChild);
+    }
+    iterator = createPaginator(totalPages);
+    while(true) {
+        const {value, done} = iterator.next();
+        if(done) return;
+        const li = document.createElement('LI');
+        li.classList.add('menu-item');
+
+        if(currentPage === value) {
+            li.classList.add('active');
+        }
+
+        const button = document.createElement('BUTTON');
+        button.textContent = value;
+        button.classList.add('page-link');
+        button.onclick = () => {
+            currentPage = value;
+
+            fetchAndDisplay();
+        }
+        li.appendChild(button);
+        pagination.appendChild(li);
+    }
+};
+
+async function fetchAndDisplay() {
+    const countries = await fetchCountries();
+    const totalPages = Math.ceil(countries.length / itemsPerPage);
+    displayCountries(countries);
+    displayPagination(totalPages);
+};
+
 let debounceRequest = debouncearFunction( () => {
     showResults();
 }, 300);
-async function callApi() {
-    const spinner = document.querySelector(".loader");
-    hideLoading(spinner);
-    try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        const result = await response.json();
-        sessionStorage.setItem('result', JSON.stringify(result));
-        createCountrys(result);
-    } catch (error) {
-        console.log(error);
+function *createPaginator(totalPages) {
+    for (let i = 1; i <= totalPages; i++ ) {
+        yield i;
     }
 };
 async function searchCountries(searchText) {
